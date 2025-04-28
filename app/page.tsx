@@ -1,11 +1,14 @@
 import { buttonVariants } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import MaxWidthWrapper from '@/components/ui/common/MaxWidthWrapper';
+import { features } from '@/constants';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <MaxWidthWrapper>
       <HeroSection />
+      <FeatureSection />
     </MaxWidthWrapper>
   );
 }
@@ -33,6 +36,28 @@ function HeroSection() {
         >
           Pricing
         </Link>
+      </div>
+    </div>
+  );
+}
+
+function FeatureSection() {
+  return (
+    <div className="py-20">
+      <h2 className="text-3xl font-bold text-center mb-12">
+        Why choose our lesson planner
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <Card key={index} className="text-center">
+            <CardHeader>
+              <CardTitle>{feature.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>{feature.description}</p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   );
