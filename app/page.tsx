@@ -16,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <FeatureSection />
       <TestimonialSection />
+      <CallToActionSection />
     </MaxWidthWrapper>
   );
 }
@@ -89,6 +90,23 @@ function TestimonialSection() {
           </Card>
         ))}
       </div>
+    </div>
+  );
+}
+
+function CallToActionSection() {
+  return (
+    <div className="py-20 text-center">
+      <h2 className="text-3xl font-bold mb-6">
+        Ready to transform your lesson planning?
+      </h2>
+      <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+        Join hundred of teachers who are already saving time when creating
+        lesson plans with us.
+      </p>
+      <Link href="/pricing" className={buttonVariants()}>
+        Start Creating Lessons Now
+      </Link>
     </div>
   );
 }
