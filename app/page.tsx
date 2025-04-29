@@ -1,7 +1,13 @@
 import { buttonVariants } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import MaxWidthWrapper from '@/components/ui/common/MaxWidthWrapper';
-import { features } from '@/constants';
+import { features, testimonials } from '@/constants';
 import Link from 'next/link';
 
 export default function Home() {
@@ -9,6 +15,7 @@ export default function Home() {
     <MaxWidthWrapper>
       <HeroSection />
       <FeatureSection />
+      <TestimonialSection />
     </MaxWidthWrapper>
   );
 }
@@ -55,6 +62,29 @@ function FeatureSection() {
             </CardHeader>
             <CardContent>
               <p>{feature.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TestimonialSection() {
+  return (
+    <div className="py-20">
+      <h2 className="text-3xl font-bold text-center mb-12">
+        What are educators saying?
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {testimonials.map((testimonial, index) => (
+          <Card key={index}>
+            <CardHeader>
+              <CardTitle>{testimonial.name}</CardTitle>
+              <CardDescription>{testimonial.role}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="italic">{testimonial.quote}</p>
             </CardContent>
           </Card>
         ))}
