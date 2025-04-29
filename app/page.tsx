@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import MaxWidthWrapper from '@/components/ui/common/MaxWidthWrapper';
+import PricingSection from '@/components/ui/common/PricingSection';
 import { features, testimonials } from '@/constants';
 import Link from 'next/link';
 
@@ -15,6 +16,7 @@ export default function Home() {
     <MaxWidthWrapper>
       <HeroSection />
       <FeatureSection />
+      <PricingSection />
       <TestimonialSection />
       <CallToActionSection />
     </MaxWidthWrapper>
