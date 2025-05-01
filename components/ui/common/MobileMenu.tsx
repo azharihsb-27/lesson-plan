@@ -4,6 +4,11 @@ import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { buttonVariants } from '../button';
+import {
+  LoginLink,
+  LogoutLink,
+  RegisterLink,
+} from '@kinde-oss/kinde-auth-nextjs/components';
 
 const MobileMenu = ({ user }: { user: boolean }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,15 +31,12 @@ const MobileMenu = ({ user }: { user: boolean }) => {
             </Link>
             {!user ? (
               <>
-                <Link
-                  href="/login"
-                  className={buttonVariants({ variant: 'secondary' })}
-                >
+                <LoginLink className={buttonVariants({ variant: 'secondary' })}>
                   Login
-                </Link>
-                <Link href="/register" className={buttonVariants()}>
+                </LoginLink>
+                <RegisterLink className={buttonVariants()}>
                   Sign Up
-                </Link>
+                </RegisterLink>
               </>
             ) : (
               <div className="flex items-center gap-2">
@@ -49,12 +51,11 @@ const MobileMenu = ({ user }: { user: boolean }) => {
                 <Link href="/create" className={buttonVariants()}>
                   Create
                 </Link>
-                <Link
-                  href="/signout"
+                <LogoutLink
                   className={buttonVariants({ variant: 'destructive' })}
                 >
                   Signout
-                </Link>
+                </LogoutLink>
               </div>
             )}
           </div>

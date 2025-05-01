@@ -3,6 +3,11 @@ import MaxWidthWrapper from './MaxWidthWrapper';
 import { Sparkles } from 'lucide-react';
 import { buttonVariants } from '../button';
 import MobileMenu from './MobileMenu';
+import {
+  LoginLink,
+  LogoutLink,
+  RegisterLink,
+} from '@kinde-oss/kinde-auth-nextjs/components';
 
 const Navbar = () => {
   const user = false;
@@ -28,15 +33,12 @@ const Navbar = () => {
             </Link>
             {!user ? (
               <>
-                <Link
-                  href="/login"
-                  className={buttonVariants({ variant: 'secondary' })}
-                >
+                <LoginLink className={buttonVariants({ variant: 'secondary' })}>
                   Login
-                </Link>
-                <Link href="/register" className={buttonVariants()}>
+                </LoginLink>
+                <RegisterLink className={buttonVariants()}>
                   Sign Up
-                </Link>
+                </RegisterLink>
               </>
             ) : (
               <div className="flex items-center gap-2">
@@ -51,12 +53,11 @@ const Navbar = () => {
                 <Link href="/create" className={buttonVariants()}>
                   Create
                 </Link>
-                <Link
-                  href="/signout"
+                <LogoutLink
                   className={buttonVariants({ variant: 'destructive' })}
                 >
                   Signout
-                </Link>
+                </LogoutLink>
               </div>
             )}
           </nav>
