@@ -9,8 +9,9 @@ import {
   LogoutLink,
   RegisterLink,
 } from '@kinde-oss/kinde-auth-nextjs/components';
+import { KindeUser } from '@kinde-oss/kinde-auth-nextjs/types';
 
-const MobileMenu = ({ user }: { user: boolean }) => {
+const MobileMenu = ({ user }: { user: KindeUser<object> | null }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
