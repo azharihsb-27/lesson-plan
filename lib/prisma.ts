@@ -5,6 +5,8 @@ declare global {
 }
 
 let prisma: PrismaClient;
+
+// Create PrismaClient instance if in production mode. In development mode, reuse available instance if exist or create a new one if doesn't.
 if (process.env.NODE_ENV === 'production') {
   prisma = new PrismaClient();
 } else {
@@ -14,4 +16,4 @@ if (process.env.NODE_ENV === 'production') {
   prisma = global.cachedPrisma;
 }
 
-export const db = prisma;
+export default prisma;
