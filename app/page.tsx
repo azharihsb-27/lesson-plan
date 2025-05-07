@@ -6,8 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import MaxWidthWrapper from '@/components/ui/common/MaxWidthWrapper';
-import PricingSection from '@/components/ui/common/PricingSection';
+import MaxWidthWrapper from '@/components/common/MaxWidthWrapper';
+import PricingSection from '@/components/common/PricingSection';
 import { features, testimonials } from '@/constants';
 import Link from 'next/link';
 

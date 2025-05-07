@@ -3,7 +3,7 @@
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { buttonVariants } from '../button';
+import { buttonVariants } from '../ui/button';
 import {
   LoginLink,
   LogoutLink,

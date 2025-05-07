@@ -6,8 +6,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../card';
-import { Button } from '../button';
+} from '../ui/card';
+import { Button } from '../ui/button';
 
 const PricingCard = ({
   tier,

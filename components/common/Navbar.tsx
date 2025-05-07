@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import { Sparkles } from 'lucide-react';
-import { buttonVariants } from '../button';
+import { buttonVariants } from '../ui/button';
 import MobileMenu from './MobileMenu';
 import {
   LoginLink,
